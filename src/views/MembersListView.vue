@@ -7,8 +7,8 @@ const membresStore = useMembresStore();
 
 <template>
   <main>
-    <h2 class="title">Liste des membres</h2>
-    <ul>
+    <h2>Liste des membres</h2>
+    <ul id="members">
       <li class="membre" v-for="membre in membresStore.state.membres">
         <router-link :to="{name:'membre', params : {id : membre.id}}">
           <h2 class="title is-3">{{ membre.fullname }}</h2>
@@ -72,4 +72,19 @@ li.membre:hover{
 .membre > .membre-information + .membre-btn button:hover {
   border-color: #f77017;
 } 
+#members{
+  margin-right:4%;
+  margin-top:4%;
+  display: flex;
+  flex-direction:row ;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap:2em;
+}
+
+a,a:visited{
+  color:white;
+}
+
 </style>

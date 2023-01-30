@@ -45,6 +45,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
+
+
 .liste-messages {
     margin-bottom: 5vh;
 }
@@ -57,4 +60,25 @@ onMounted(() => {
 .liste-messages .box {
     margin: 0;
 }
+
+p{
+    color:white;
+}
+
+nav{
+  width:100%;
+  position: fixed;
+  background-color: rgb(23, 23, 23);
+  display: flex;
+  justify-content: left;
+  padding:1.5em;
+  top:0;
+  text-decoration: none;
+  gap:2rem;
+}
+
+a,a:visited{
+  color:white;
+}
+
 </style>

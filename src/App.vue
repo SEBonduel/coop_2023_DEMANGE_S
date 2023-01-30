@@ -20,8 +20,9 @@ onMounted(()=>{
 
 <template>
   <nav>
-    <RouterLink to="/"> Home </RouterLink>
-    <RouterLink to="/members"> Membres </RouterLink>
+    <RouterLink to="/"> Accueil </RouterLink>
+    <RouterLink to="/members"> Liste des membres </RouterLink>
+    <RouterLink to="/signup"> Créer un compte </RouterLink>
   </nav>
  
 

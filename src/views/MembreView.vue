@@ -19,8 +19,20 @@ console.log(member);
 
 
 <style>
+
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100%; 
+  position: relative;
+  background-image: url("../../public/dark.jpg");
+  background-repeat:no-repeat ;
+  background-size:cover;
+}
+
 h2,p{
-    color: rgb(143, 114, 101);
+    color: rgb(255, 255, 255);
     font-weight:thaoma;
 }
 
@@ -72,3 +84,33 @@ li.membre:hover{
 .membre > .membre-information + .membre-btn button:hover {
   border-color: #f77017;
 } 
+
+
+
+nav{
+  width:100%;
+  position: fixed;
+  background-color: rgb(23, 23, 23);
+  display: flex;
+  justify-content: left;
+  padding:1.5em;
+  top:0;
+}
+
+nav.a{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+
+a,a:visited{
+  color:white;
+}
+
+div.membre{
+ margin-left:38%;
+ margin-top:200px;
+}
+
+</style>

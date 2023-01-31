@@ -42,6 +42,15 @@ onMounted(() => {
 
 <style>
 
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ body::-webkit-scrollbar {
+  display: none;
+
+/* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 p.subtitle:first-child{
   margin:auto;
 }
@@ -86,7 +95,6 @@ body{
   background-image: url("../../public/dark.jpg");
   background-repeat:no-repeat ;
   background-size:cover;
-
 }
 nav{
   width:100%;
@@ -97,7 +105,7 @@ nav{
   padding:1.5em;
   top:0;
   text-decoration: none;
-  gap:2rem;
+  gap: 2rem;
 }
 
 nav.a{

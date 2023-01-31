@@ -7,11 +7,11 @@ const membresStore = useMembresStore();
 
 <template>
   <main>
-    <h2>Liste des membres</h2>
+    <h1>Liste des membres</h1>
     <ul id="members">
       <li class="membre" v-for="membre in membresStore.state.membres">
         <router-link :to="{name:'membre', params : {id : membre.id}}">
-          <h2 class="title is-3">{{ membre.fullname }}</h2>
+          <h2>{{ membre.fullname }}</h2>
           <p class="subtitle">{{ membre.email }}</p>
         </router-link>
       </li>
@@ -19,11 +19,26 @@ const membresStore = useMembresStore();
   </main>
 </template>  
 <style>
-a
-{
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+
+/* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+a{
     color: rgb(143, 114, 101);
     font-weight:thaoma;
 }
+
+h1{
+  color:white;
+  padding-top:2em;
+}
+
 .membre {
   text-align:center;
   display: flex;

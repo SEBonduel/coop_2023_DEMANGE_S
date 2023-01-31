@@ -27,47 +27,55 @@ function validerFormulaire() {
 
 <template>
   <div class="columns">
-      <div class="column is-6 is-offset-3">
+        <form class="box" @submit.prevent="validerFormulaire">
+        <h1>Création de votre compte</h1>
+        <br>
+            <div class="field">
+                <label class="label">Nom </label>
+                <input class="input" v-model="member.fullname" type="text" placeholder="Name or username">
+            </div>
 
-          <h1 class="title">Sign up</h1>
+            <div class="field">
+                <label class="label">E-Mail </label>
+                <input class="input" v-model="member.email" type="email" placeholder="email@domaine.com">
+            </div>
 
-          <form class="box" @submit.prevent="validerFormulaire">
-            <h2>Création de votre compte</h2>
-              <div class="field">
-                  <label class="label">Nom </label>
-                  <input class="input" v-model="member.fullname" type="text" placeholder="Name or username">
-              </div>
+            <div class="field">
+                <label class="label">Mot de passe </label>
+                <input class="input" v-model="member.password" type="password">
+            </div>
 
-              <div class="field">
-                  <label class="label">E-Mail </label>
-                  <input class="input" v-model="member.email" type="email" placeholder="email@domaine.com">
-              </div>
+            <div class="field">
+                <label class="label">Confirmer votre mot de passe </label>
+                <input class="input" v-model="member.password" type="password">
+            </div>
+            <br>
 
-              <div class="field">
-                  <label class="label">Mot de passe </label>
-                  <input class="input" v-model="member.password" type="password">
-              </div>
-
-              <div class="field">
-                  <label class="label">Confirmer votre mot de passe </label>
-                  <input class="input" v-model="member.password" type="password">
-              </div>
-
-              <div class="field is-grouped">
-                  <p class="control">
-                      <button class="button is-primary">Créer votre compte</button>
-                  </p>
-                  <p class="control">
-                      <router-link to="/login" class="button">Annuler</router-link>
-                  </p>
-              </div>
-          </form>
-      </div>
+            <div class="field is-grouped">
+                <p class="control">
+                    <button class="button is-primary">Créer votre compte</button>
+                </p>
+                <br>
+                <p class="control">
+                    <router-link to="/login" class="button">Annuler</router-link>
+                </p>
+            </div>
+        </form>
   </div>
 
 </template>
 
 <style>
+
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ body::-webkit-scrollbar {
+  display: none;
+
+/* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 body{
     font-family: Arial, sans-serif;
     margin: 0;
@@ -98,8 +106,8 @@ nav.a{
   
 }
 
-div.createconv{
-    margin-top: 100px;
+div.columns{
+    padding-top: 8em;
 }
 
 
@@ -108,7 +116,7 @@ form.box{
     flex-direction: column;
     align-items: center;
     color: #f1f1f1;
-    padding: 3em;
+    padding:4em;
     width: 60%;
     font-weight: bold;
     background-color: #332126;

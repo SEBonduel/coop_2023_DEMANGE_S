@@ -33,7 +33,7 @@ onMounted(() => {
 </script>
 <template>
     <div v-if="state.channel.id">
-        <h1 class="title">{{ state.channel.topic }}</h1>
+        <h1 class="convoview">{{ state.channel.topic }}</h1>
         <p class="subtitle">{{ state.channel.label }}</p>
         <div class="liste-messages">
             <template v-for="message in state.messages">
@@ -46,8 +46,25 @@ onMounted(() => {
 
 <style scoped>
 
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ body::-webkit-scrollbar {
+  display: none;
 
+/* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
+div.box{
+    display: flex;
+    color:white;
+}
+
+p.subtitle{
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .liste-messages {
     margin-bottom: 5vh;
 }
@@ -67,6 +84,7 @@ p{
 
 nav{
   width:100%;
+  color:white;
   position: fixed;
   background-color: rgb(23, 23, 23);
   display: flex;
@@ -74,7 +92,12 @@ nav{
   padding:1.5em;
   top:0;
   text-decoration: none;
-  gap:2rem;
+  gap: 2rem;
+}
+
+h1.convoview{
+    color:white;
+    padding-top:2em;
 }
 
 a,a:visited{

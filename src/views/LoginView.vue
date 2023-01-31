@@ -30,40 +30,47 @@ function validationFormulaire() {
 }
 </script>
 <template>
-    <div class="columns">
-        <div class="column is-4 is-offset-4">
-
-            <h1 class="title">Login</h1>
-
+    <div>
+        
             <form class="box" @submit.prevent="validationFormulaire">
+            <h1>Login</h1>
+            <div class="field">
+                <label class="label">E-Mail </label>
+                <input class="input" v-model="member.email" type="email" placeholder="email@domaine.com">
+            </div>
 
-                <div class="field">
-                    <label class="label">E-Mail </label>
-                    <input class="input" v-model="member.email" type="email" placeholder="email@domaine.com">
-                </div>
+            <div class="field">
+                <label class="label">Mot de passe </label>
+                <input class="input" v-model="member.password" type="password">
+            </div>
+            
 
-                <div class="field">
-                    <label class="label">Mot de passe </label>
-                    <input class="input" v-model="member.password" type="password">
+            <div class="field is-grouped">
+                <div class="control">
+                    <button class="button is-primary">Se connecter </button>
                 </div>
-                
-
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button class="button is-primary">Se connecter </button>
-                    </div>
-                    <div class="control">
-                        <router-link to="/" class="button">Annuler</router-link><br>
-                    </div>
+                <br>
+                <div class="control">
+                    <router-link to="/" class="button">Annuler</router-link><br>
                 </div>
-            </form>
-            <router-link to="/signup" class="button">Créer votre compte</router-link>
-        </div>
+            </div>
+        </form>
+            
+        
     </div>
 
 </template>
 
 <style>
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ body::-webkit-scrollbar {
+  display: none;
+
+/* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 body{
     font-family: Arial, sans-serif;
     margin: 0;
@@ -74,9 +81,12 @@ body{
     background-repeat:no-repeat ;
     background-size:cover;
     color:white;
-  
-
+}  
+div{
+    margin-top:2em;
 }
+
+
 nav{
   width:100%;
   position: fixed;
@@ -104,7 +114,9 @@ form.box{
     flex-direction: column;
     align-items: center;
     color: #f1f1f1;
-    padding: 3em;
+    padding: 4em;
+    margin-top: 6em;
+    margin-left:15%;
     width: 60%;
     font-weight: bold;
     background-color: #332126;
@@ -112,7 +124,6 @@ form.box{
     border-radius: 10px;
     border: 2px solid rgba(141, 188, 116, 0.1);
     transition: border-color 0.3s ease-in-out;
-    margin:auto;
 }
 
 input.input{
